@@ -10,7 +10,7 @@ import com.example.recycleviewjson.ui.theme.data.model.Message
 class SendViewHolder(val binding: ItemRecycleviewLayoutMeBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(message: Message) {
-        binding.message= Message()
+        binding.message= message
     }
 //    val txtDateMe:TextView
 //    val txtMessageMe: TextView

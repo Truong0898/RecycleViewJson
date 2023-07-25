@@ -20,12 +20,11 @@ class ChatAdapter(var lsMessage: List<Message>) :
     private lateinit var bindingU: ItemRecycleviewLayoutUBinding
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         if (viewType == 0) {
-            return SendViewHolder(
-                binding = ItemRecycleviewLayoutMeBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+            binding = ItemRecycleviewLayoutMeBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            return SendViewHolder(binding)
         } else {
-            return ReceiViewHolder(
-               bindingU = ItemRecycleviewLayoutUBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-            )
+            bindingU = ItemRecycleviewLayoutUBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            return ReceiViewHolder(bindingU)
         }
     }
 

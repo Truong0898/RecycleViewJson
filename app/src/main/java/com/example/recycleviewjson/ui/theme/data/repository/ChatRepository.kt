@@ -6,6 +6,8 @@ import com.example.recycleviewjson.ui.theme.data.model.Message
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
+import java.sql.Date
+import java.text.SimpleDateFormat
 
 class ChatRepository {
     private fun getJsonDataFromAsset(context: Context, filename: String): String? {
@@ -32,7 +34,7 @@ class ChatRepository {
             var message: Message = Message()
             message.name = messageJsonObject.getString("name")
             message.message = messageJsonObject.getString("message")
-            message.timeLine = messageJsonObject.getString("timeLine")
+            message.timeLine = messageJsonObject.getString("timeLine").toLong().toTimeData()
             message.status = 1
 
             lsMessage.add(message)
@@ -40,6 +42,13 @@ class ChatRepository {
         mutableMessage.postValue(lsMessage)
         return mutableMessage
 
+
     }
+    fun Long.toTimeData():String {
+        val dateTime = java.util.Date(this)
+        val format = SimpleDateFormat("YYYY.mm.dd HH:mm")
+        return format.format(dateTime)
+    }
+
 
 }

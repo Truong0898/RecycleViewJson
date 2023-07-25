@@ -5,4 +5,6 @@ data class Message (
     var message: String = "",
     var timeLine: String = "",
     var status: Int = 0
+
+
 )
