@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -8,6 +9,7 @@ android {
     compileSdk 33
 
     defaultConfig {
+        applicationId "info.androidhive.databinding"
         applicationId "com.example.recycleviewjson"
         minSdk 29
         targetSdk 33
@@ -36,6 +38,7 @@ android {
     buildFeatures {
         dataBinding true
     }
+
     packagingOptions {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
